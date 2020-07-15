@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.demoapp.title.TitleFragment"
+        android:label="TitleFragment"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment_to_mainpageFragment"
+            app:destination="@id/mainpageFragment"
+            app:popUpTo="@id/titleFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_osMainPageFragment"
+            app:destination="@id/osMainPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainpageFragment"
+        android:name="com.example.demoapp.mainpage.mainpageFragment"
+        android:label="mainpageFragment"
+        tools:layout="@layout/fragment_mainpage">
+        <action
+            android:id="@+id/action_mainpageFragment_to_quizPageFragment"
+            app:destination="@id/quiz_destination"
+            app:popUpTo="@id/mainpageFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quiz_destination"
+        android:name="com.example.demoapp.quizpage.QuizPageFragment"
+        android:label="quiz_destination"
+        tools:layout="@layout/fragment_quiz_page">
+        <action
+            android:id="@+id/action_game_to_score"
+            app:destination="@id/result_destination"
+            app:popUpTo="@id/mainpageFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/result_destination"
+        android:name="com.example.demoapp.quizResult.QuizResultFragment"
+        android:label="result_destination"
+        tools:layout="@layout/fragment_quiz_result">
+        <action
+            android:id="@+id/action_quizResultFragment_to_quizPageFragment"
+            app:destination="@id/quiz_destination"
+            app:popUpTo="@id/mainpageFragment" />
+        <argument
+            android:name="score"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_result_destination_to_mainpageFragment"
+            app:destination="@id/mainpageFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/osMainPageFragment"
+        android:name="com.example.demoapp.mainpage.OsMainPageFragment"
+        android:label="OsMainPageFragment"
+        tools:layout="@layout/fragment_os_main_page">
+        <action
+            android:id="@+id/action_osMainPageFragment_to_osQuizPageFragment"
+            app:destination="@id/os_quiz_destination"
+            app:popUpTo="@id/osMainPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/os_quiz_destination"
+        android:name="com.example.demoapp.osquizpage.OsQuizPageFragment"
+        android:label="os_quiz_destination"
+        tools:layout="@layout/fragment_os_quizpage">
+        <action
+            android:id="@+id/action_osQuizPageFragment_to_osQuizResultFragment"
+            app:destination="@id/os_result_destination"
+            app:popUpTo="@id/osMainPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/os_result_destination"
+        android:name="com.example.demoapp.osquizresult.OsQuizResultFragment"
+        android:label="os_result_destination"
+        tools:layout="@layout/fragment_os_quiz_result">
+        <action
+            android:id="@+id/action_osQuizResultFragment_to_osQuizPageFragment"
+            app:destination="@id/os_quiz_destination" />
+        <action
+            android:id="@+id/action_osQuizResultFragment_to_osMainPageFragment"
+            app:destination="@id/osMainPageFragment" />
+        <argument
+            android:name="score"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>

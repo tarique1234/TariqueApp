@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E66893">
+
+        <TextView
+            android:id="@+id/viewTitle"
+            style="@style/ViewTitle"
+            android:layout_width="268dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="100dp"
+            android:autoText="false"
+            android:background="#ECC58B"
+            android:capitalize="characters"
+            android:fontFamily="@font/archivo_black"
+            android:text="@string/operating_system"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/notesButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginRight="85dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/notes_button"
+            android:textAllCaps="true"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.437"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewTitle"
+            app:layout_constraintVertical_bias="0.195" />
+
+        <Button
+            android:id="@+id/quizButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_button"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/performanceButton"
+            app:layout_constraintEnd_toEndOf="@+id/notesButton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/notesButton"
+            app:layout_constraintTop_toBottomOf="@+id/notesButton" />
+
+        <Button
+            android:id="@+id/performanceButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/performance_button"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/quizButton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/quizButton"
+            app:layout_constraintTop_toBottomOf="@+id/quizButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
